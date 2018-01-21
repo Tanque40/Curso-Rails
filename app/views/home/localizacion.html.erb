@@ -1,0 +1,43 @@
+<% content_for :imagen do%>
+    <div class="row">
+        <div class="col s12 m10 l10 offset-m1 offset-l1">
+            <%= image_tag("goku.jpg", :class => "responsive-img")%>
+        </div>
+    </div>
+<% end %>
+<div class="row">
+    <div class="col s12 m6 l8">
+        <div class="card center">
+            <h3><%= @titulo %></h3>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <%= form_tag "/home/contacto" do%>
+        <div class="card-panel">
+            <div class="row">
+                <div class="input-field col s12 m6 l6 offset-l3">
+                    <%= entrada_de_texto "nombre"%>
+                </div>
+                <div class="input-field col s12 m6 l6 offset-l3">
+                    <%= label_tag "email", "Inserte su email" %>
+                    <%= email_field_tag "email" %>
+                </div>
+                <div class="input-field col s12 m6 l6 offset-l3">
+                    <%= entrada_de_texto "asunto"%>
+                </div>
+                <div class="input-field col s12 m6 l6 offset-l3">
+                    <%= text_area_tag "mensaje", nil %>
+                    <%= label_tag "mensaje", "Mensaje" %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6 offset-l3">
+                    <center>
+                        <%= submit_tag "Confirmar", :class => "btn" %>
+                    </center>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,22 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "materialize";
+@import "material_icons";
+header, main, footer {
+    padding-left: 300px;
+}
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+body{
+    background-color: #eaeaea;
+}
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 10%;
+  left:45%;
+}

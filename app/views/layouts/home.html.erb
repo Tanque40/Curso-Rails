@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CursoRails</title>
+    <link rel="shortcut icon" href="assets/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.js', 'data-turbolinks-track': 'reload'%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+    <ul id="slide-out" class="side-nav fixed collapsible">
+        <li>
+            <%= link_to :action => "index" do%>
+                <%= material_icon.home %><span>Inicio</span>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to :action => "quienes_somos" do%>
+                <%= material_icon.face %><span>¿Quienes somos?</span>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to :action => "contacto" do%>
+                <%= material_icon.email %>
+                <span>Contáctanos</span>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to :action => "localizacion" do%>
+                <%= material_icon.location_on %><span>Localización</span>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to :controller => "home", :action => "servicios" do%>
+                <%= material_icon.mood %><span>Servicios</span>
+            <% end %>
+        </li>
+    </ul>
+    <nav class="hide-on-large-only blue-grey lighten-2">
+        <div class="nav-wrapper">
+            <%= link_to 'Curso Rails', {:action => "index"}, :class => "brand-logo right"%>
+            <a data-activates="slide-out" class="button-collapse left"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <main>
+        <div class="row">
+            <div class="col s10 m8 l6 offset-s1 offset-m2 offset-l3">
+                    <div class="card center">
+                        <h2>Curso Rails</h2>
+                    </div>
+            </div>
+        </div>
+        <% if hay_banner? %>
+            <%= yield :imagen %>
+        <% elsif es_inicio? %>
+            <%= render "layouts/cabecera_inicio" %>
+        <% end %>
+        <%= yield %>
+    </main>
+</body>
+<script type="text/javascript">
+    $(".button-collapse").sideNav();
+</script>
+</html>
