@@ -21,3 +21,5 @@
 /yarn-error.log
 
 .byebug_history
+ #ignorar la gema
+ sqlite3.gem
