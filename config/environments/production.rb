@@ -1,6 +1,5 @@
 Rails.application.configure do
-#Para que funcione Heroku
-environment ENV.fetch("RAILS_ENV") { "production" }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
