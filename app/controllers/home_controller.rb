@@ -1,5 +1,6 @@
 #encoding: utf-8
 class HomeController < ApplicationController
+    around_action :autorizacion
     #@lol = true
     #@xd = false
     Nombres.initialize
@@ -13,6 +14,7 @@ class HomeController < ApplicationController
         #end
         #redirect_to :action => "quienes_somos", :id => ["Bruno", "Adrian", "Atena"], :personas => @personas
         @elementos = Nombres.obtener
+        logger.info("Estamos en #{action_name}")
     end
 
     def quienes_somos
@@ -35,6 +37,7 @@ class HomeController < ApplicationController
                 redirect_to :action => "index"
             end
         end
+        logger.debug("Array #{@array.inspect}")
     end
 
     def localizacion
@@ -65,5 +68,10 @@ class HomeController < ApplicationController
 
     def verificar_datos
         redirect_to "index"
+    end
+
+    def autorizacion
+        yield
+        logger.info("Esto es un filtro")
     end
 end
