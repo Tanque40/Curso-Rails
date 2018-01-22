@@ -27,7 +27,7 @@ class EmailMailer < ApplicationMailer
         @asunto = parametros[:asunto]
         @mensaje = parametros[:mensaje]
 
-        mail to: email, :subject => "#{parametros[:asunto]}, #{@asunto}" do |format|
+        mail to: email, :subject => "#{parametros[:asunto]}" do |format|
             format.html
             format.text
         end
