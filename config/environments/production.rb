@@ -63,6 +63,9 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "curso_rails_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+#Se lo agregamos para mandar correos
+  config.action_mailer.raise_delivery_errors = true
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
@@ -89,4 +92,19 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #Indicamos la base de envio de correo del sistema
+  ActionMailer::Base.sendmail_settings = {:location => 'usr/sbin/sendmail'}
+
+  #Configuración de correo electronico
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => "gmail.com",
+      :user_name => "bvitte18",
+      :password => "04pu08tu00",
+      :authntication => "plain",
+      :enable_starttls_auto => true
+  }
 end
