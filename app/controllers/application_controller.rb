@@ -5,8 +5,10 @@ class ApplicationController < ActionController::Base
   private
 
   def contador_de_peteciones
-      valor = (cookies[:peticiones] ||= "0").to_i
-      cookies[:peticiones] = (valor + 1).to_s
-      @peticiones = cookies[:peticiones]
+      if action_name == "index"
+          valor = (cookies[:peticiones] ||= "0").to_i
+          cookies[:peticiones] = (valor + 1).to_s
+          @peticiones = cookies[:peticiones]
+      end
   end
 end

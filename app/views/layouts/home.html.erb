@@ -46,7 +46,8 @@
         </div>
     </nav>
     <main>
-        <h3>No mames llevas <%= @peticiones %> veces que entras</h3>
+        <% if es_inicio? %>
+        <h3>No inventes llevas <%= @peticiones %> veces que entras</h3>
         <div class="row">
             <div class="col s10 m8 l6 offset-s1 offset-m2 offset-l3">
                     <div class="card center">
@@ -54,6 +55,7 @@
                     </div>
             </div>
         </div>
+        <% end %>
         <% if hay_banner? %>
             <%= yield :imagen %>
         <% elsif es_inicio? %>

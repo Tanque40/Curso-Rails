@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: Bruno
+  apellidos: Vitte
+  edad: 17
+
+two:
+  nombre: Adrian
+  apellidos: Vitte
+  edad: 14
+three:
+  nombre: Adrian
+  apellidos: Vitte
+  edad: 14
+four:
+  nombre: Cesar
+  apellidos: Arellano
+  edad: 18
