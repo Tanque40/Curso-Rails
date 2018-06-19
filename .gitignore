@@ -11,6 +11,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+/config/environments/development.rb
+
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -21,4 +24,3 @@
 /yarn-error.log
 
 .byebug_history
-/config/environments/development.rb

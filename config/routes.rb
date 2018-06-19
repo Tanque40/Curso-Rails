@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :productos
     get 'errores/rutas'
 
     root:to => 'home#index'
@@ -13,9 +14,13 @@ Rails.application.routes.draw do
 
     get 'home/servicios'
 
+    get 'productos/index'
+
     post 'home/servicios'
 
     post 'home/contacto'
+
+    match "productos" => "productos#index", :via => [:get, :post]
 
     match "servicios" => "home#index", :via => [:get, :post]
 
